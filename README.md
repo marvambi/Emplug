@@ -48,4 +48,6 @@ Thus, the modified <b>Pre-order depth-first search</b> is as follows:
 - Traverse the right subtree by recursively calling the pre-order function.<br><br>
 
 The image below shows the output of this pre-order algorithm applied to a 12-node binary tree:
-<p align="center"><img src="./traversePreorderTree.jpg" /></p>
+<p align="center"><img src="./traversePreorderTree.jpg" /></p><br>
+![GitHub Logo](/traversePreorderTree.jpg)
+Format: ![Pre-Order traversal](url)
