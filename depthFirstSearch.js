@@ -24,7 +24,6 @@ Tree.prototype.traverseDF = function(callback) {
  
         // step 1
     })(this._root);
- 
 };
  
 Tree.prototype.traverseBF = function(callback) {
