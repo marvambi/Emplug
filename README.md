@@ -1,5 +1,5 @@
 # Emplug
-An Algorithm for Traversing a Tree using Depth-first Search (DFS) <br>
+<h1> An Algorithm for Traversing a Tree - Depth-first (DFS) </h1><br>
 
 <b>Basic Terminologies</b>
 <b>Tree</b>
@@ -16,9 +16,14 @@ The top-most node (or the node with no ‘parent’ node) is called the root. Th
 
 <b>Algorithm</b><br>
 
-An <b>algorith</b> is a set of steps we apply to complete a particular task or computation.<br>
+An <b>algorithm</b> is a set of steps we apply to complete a particular task or computation.<br>
 It is basically a procedure or formula for solving a problem, based on conducting a sequence of specified actions, and which (like a map or flowchart) will lead to the sought result if followed.
 
 <strong>Traversal</strong><br>
 <b>Traversal</b> is a process or method or strategy used to visit all the nodes of a tree and may print their values too. In a
-traversal, the goal is for the algorithm to visit all the nodes in the tree in some order and perform an operation on them. The most basic traversal simply enumerates the nodes so that you can see their ordering in the traversal.
+traversal, the goal is for the algorithm to visit all the nodes in the tree in some order and perform an operation on them. The most basic traversal simply enumerates the nodes so that you can see their ordering in the traversal.<br>
+There are three common ways to traverse a <b>tree</b> in depth-first order: in-order, pre-order and post-order.<br>
+Traversing a tree depth-first means that we’ll first visit our ‘deepest’ or ‘lowest’ nodes, or the search tree is deepened as much as possible on each child before going to the next sibling and ultimately visit our root node.<br>
+<p align="center"><img src="http://amberley.me/wp-content/uploads/2016/05/tree_3-1.png" /></p>
+
+@marvambi :+1:
