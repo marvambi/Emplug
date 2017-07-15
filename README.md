@@ -47,12 +47,44 @@ Thus, the modified <b>Pre-order depth-first search</b> is as follows:
 - Traverse the left subtree by recursively calling the pre-order function.
 - Traverse the right subtree by recursively calling the pre-order function.<br><br>
 
-This bares itself to recursive implementation. And by looking at what these nodes might look like in the context of our code, we can visualise a cross-section of a binary search tree's node below.
+This bares itself to recursive implementation via stack. And by looking at what these nodes might look like in the context of our code, we can visualise a cross-section of a binary search tree's node below.
 <p align="center"><img src="https://cdn-images-1.medium.com/max/1600/1*60uzSIuYpOKC5H8oJKo0Bg.jpeg" /></p>
-Each node has three parts — data, a left reference, and a right reference. And we can see that, we can already see one thing pretty clearly: we’re going to have to repeat the action of “reading” these three parts of a node for each node in the tree.
-> Thus, the amount of time it’s going to take us to traverse through a tree using DFS is directly proportional to the number of nodes in the tree. The time complexity of using breadth-first search on a binary tree is O(n), where n is the number of nodes in the tree.
+<p>Each node has three parts — data, a left reference, and a right reference. And we can see that, we can already see one thing pretty clearly: we’re going to have to repeat the action of “reading” these three parts of a node for each node in the tree.</p>
+> Thus, the amount of time it’s going to take us to traverse through a tree using DFS is directly proportional to the number of nodes in the tree. The time complexity of using depth-first search on a binary tree is O(n), where n is the number of nodes in the tree.
+
+## Assumming the following pseudocode for our preorder algorithm
+
+```
+  function preorderSearch(node) {
+    // Check that a node exists.
+    if (node === null) {
+      return;
+    }
+
+    // Print the data of the node.
+    console.log(node.data);
+
+    // Pass in a reference to the left child node to preorderSearch.
+    // Then, pass reference to the right child node to preorderSearch.
+    preorderSearch(node.left);
+    preorderSearch(node.right);
+  }
+```
 
 The image below shows the output of this pre-order algorithm applied to a 12-node binary tree:
 <p align="center"><img src="./traversePreorderTree.jpg" /></p><br>
 
-One thing that we glimps clearly from the above is:  the time complexity of depth-first search. We know that the amount of time that a DFS takes corresponds directly to how big a tree is — specifically, how many nodes it has, because that’s how many nodes we need to visit, which will directly impact how much time it will take for us to traverse the whole tree!
+One thing that we glimps clearly from the above is:  the <b>time</b> complexity of depth-first search. We know that the amount of time that a DFS takes corresponds directly to how big a tree is — specifically, how many nodes it has, because that’s how many nodes we need to visit, which will directly impact how much time it will take for us to traverse the whole tree!<br>
+This is different for the <b>space</b> complexity as a depth-first search is usually recursively implemeted and we end up calling one function from within itself, repeatedly. <br>
+
+With reference to our binary tree cross-section tree, If we were implementing preorder search, we would traverse from node 1 to 2, from 2 to 4, and from node 4 to 8. Each time that we visited one of these nodes, we would be invoking the preorderSearch function from within the first function we called when we passed in the root node.
+
+This is important because of the call stack. We know that stacks operate in with a First-In-Last-Out principle. Which means that only when the last function call finishes running and returns can we start popping functions that have currently taken up space from off of the call stack.
+
+This is illustrated further below: 
+<p align="center"><img src="https://cdn-images-1.medium.com/max/1600/1*mhCQswDT8zWlKP41zcS4WA.jpeg" /></p>
+What this means is that our call stack will continue to grow until we reach a leaf node.
+Then our preorderSearch function will return because we will pass it references to a left and a right node that simply won’t exist!
+
+> And then each of the “open” functions in our call stack will start to return and close up, until we get back down to the first function we called to start off with.
+> Consequently, this goes to show that the amount of space we need in terms of memory depends upon the height of our tree, or O(h). The height of the tree will tell us how much memory we’ll need in the deepest recursive function call, which will tell us the worst-case scenario for traversing a tree, depth-first.
