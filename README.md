@@ -47,5 +47,12 @@ Thus, the modified <b>Pre-order depth-first search</b> is as follows:
 - Traverse the left subtree by recursively calling the pre-order function.
 - Traverse the right subtree by recursively calling the pre-order function.<br><br>
 
+This bares itself to recursive implementation. And by looking at what these nodes might look like in the context of our code, we can visualise a cross-section of a binary search tree's node below.
+<p align="center"><img src="https://cdn-images-1.medium.com/max/1600/1*60uzSIuYpOKC5H8oJKo0Bg.jpeg" /></p>
+Each node has three parts — data, a left reference, and a right reference. And we can see that, we can already see one thing pretty clearly: we’re going to have to repeat the action of “reading” these three parts of a node for each node in the tree.
+> Thus, the amount of time it’s going to take us to traverse through a tree using DFS is directly proportional to the number of nodes in the tree. The time complexity of using breadth-first search on a binary tree is O(n), where n is the number of nodes in the tree.
+
 The image below shows the output of this pre-order algorithm applied to a 12-node binary tree:
 <p align="center"><img src="./traversePreorderTree.jpg" /></p><br>
+
+One thing that we glimps clearly from the above is:  the time complexity of depth-first search. We know that the amount of time that a DFS takes corresponds directly to how big a tree is — specifically, how many nodes it has, because that’s how many nodes we need to visit, which will directly impact how much time it will take for us to traverse the whole tree!
