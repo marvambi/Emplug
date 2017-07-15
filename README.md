@@ -17,7 +17,8 @@ The top-most node (or the node with no ‘parent’ node) is called the root. Th
 <b>Algorithm</b><br>
 
 An <b>algorith</b> is a set of steps we apply to complete a particular task or computation.<br>
-It is basically a procedure or formula for solving a problem, based on conducting a sequence of specified actions.
+It is basically a procedure or formula for solving a problem, based on conducting a sequence of specified actions, and which (like a map or flowchart) will lead to the sought result if followed.
 
 <strong>Traversal</strong><br>
-<b>Traversal</b> is a process or method or strategy used to visit all the nodes of a tree and may print their values too.
+<b>Traversal</b> is a process or method or strategy used to visit all the nodes of a tree and may print their values too. In a
+traversal, the goal is for the algorithm to visit all the nodes in the tree in some order and perform an operation on them. The most basic traversal simply enumerates the nodes so that you can see their ordering in the traversal.
