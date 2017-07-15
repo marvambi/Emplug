@@ -34,9 +34,16 @@ This means that in depth-first search, once we start down a path, we don’t sto
 
 We'll be specifically looking at this application for a binary search tree as:<br> 
 -   Read the data of the node that we’re checking or updating.
--   Check the node to the left of the node (the left reference) that we’re on currently.
--   Check the node to the right of the node (the left reference) that we’re on currently.
+-   Check the node to the left of the node (the left reference) that we’re on currently if it exist.
+-   Check the node to the right of the node (the left reference) that we’re on currently if it exist.
 
 The different depth-first strategies all revolve around the order in which we do these three things.<br>
-We will be focusing on one of the strategies here, in this case, I'll dwell on pre-order strategy which is the second strategy illustrate in the image below.<br>
+We will be focusing on one of the strategies here, in this case, I'll dwell on pre-order strategy which is the first strategy illustrate in the image below.<br>
 <p align="center"><img src="https://cdn-images-1.medium.com/max/1200/1*iHf2wqSyra1kqOKvVBsbtA.jpeg" /></p>
+Thus, the modified <b>Pre-order depth-first search</b> is as follows:
+
+- Check if the current node is empty / null.
+- Display the data part of the root (or current node).
+- Traverse the left subtree by recursively calling the pre-order function.
+- Traverse the right subtree by recursively calling the pre-order function.
+
