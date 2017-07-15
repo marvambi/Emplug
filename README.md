@@ -45,5 +45,7 @@ Thus, the modified <b>Pre-order depth-first search</b> is as follows:
 - Check if the current node is empty / null.
 - Display the data part of the root (or current node).
 - Traverse the left subtree by recursively calling the pre-order function.
-- Traverse the right subtree by recursively calling the pre-order function.
+- Traverse the right subtree by recursively calling the pre-order function.<br><br>
 
+The image below shows the output of this pre-order algorithm applied to a 12-node binary tree:
+<p align="center"><img src="./traversePreorderTree.jpg" /></p>
