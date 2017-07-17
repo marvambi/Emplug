@@ -1,6 +1,10 @@
+// Given a Tree (Binary), the following program allows us to  traverse it, depth first
+
 function Node(data) {
     this.data = data;
     this.parent = null;
+    this.leftn = new Node;
+    this.right = new Node;
     this.children = [];
 }
  
@@ -9,38 +13,37 @@ function Tree(data) {
     this._root = node;
 }
  
+
+Tree.prototype.preOrderTraversal = function () {
+    if (this._root == null) {
+        return null;
+    } else {
+        var result = new Array();
+        function preOrder(nodeRef) {
+            result.push(nodeRef.data);
+            nodeRef.left && preOrder(nodeRef.left);
+            nodeRef.right && preOrder(nodeRef.right);
+        };
+        preOrder(this._root);
+        return result;
+    };
+}
+
 Tree.prototype.traverseDF = function(callback) {
  
-    // this is a recurse and immediately-invoking function
-    (function recurse(currentNode) {
+    // Recursively defined and invoked function
+    (function walk(nodeRef) {
         // step 2
-        for (var i = 0, length = currentNode.children.length; i < length; i++) {
+        for (var i = 0, length = nodeRef.children.length; i < length; i++) {
             // step 3
-            recurse(currentNode.children[i]);
+            walk(nodeRef.children[i]);
         }
  
         // step 4
-        callback(currentNode);
+        callback(nodeRef);
  
         // step 1
     })(this._root);
-};
- 
-Tree.prototype.traverseBF = function(callback) {
-    var queue = new Queue();
- 
-    queue.enqueue(this._root);
- 
-    currentTree = queue.dequeue();
- 
-    while(currentTree){
-        for (var i = 0, length = currentTree.children.length; i < length; i++) {
-            queue.enqueue(currentTree.children[i]);
-        }
- 
-        callback(currentTree);
-        currentTree = queue.dequeue();
-    }
 };
  
 Tree.prototype.contains = function(callback, traversal) {
